@@ -1,0 +1,12 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+boost-dev
+gcc-dev
+gperftools-dev
+openssl-dev
+pcre-dev
+pcre-extras
+snappy-dev
+wiredtiger-dev
+yaml-cpp-dev
+zlib-dev

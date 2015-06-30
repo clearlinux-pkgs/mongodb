@@ -1,0 +1,25 @@
+From ee82f60736cb9faf8201cdcec7a531f2c816d679 Mon Sep 17 00:00:00 2001
+From: Alberto Murillo <alberto.murillo.silva@intel.com>
+Date: Mon, 31 Aug 2015 17:34:20 -0500
+Subject: [PATCH] Change default dbpath
+
+---
+ src/mongo/db/storage_options.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/mongo/db/storage_options.cpp b/src/mongo/db/storage_options.cpp
+index 5ca50ee..23a3321 100644
+--- a/src/mongo/db/storage_options.cpp
++++ b/src/mongo/db/storage_options.cpp
+@@ -43,7 +43,7 @@ StorageGlobalParams storageGlobalParams;
+ const char* StorageGlobalParams::kDefaultDbPath = "\\data\\db\\";
+ const char* StorageGlobalParams::kDefaultConfigDbPath = "\\data\\configdb\\";
+ #else
+-const char* StorageGlobalParams::kDefaultDbPath = "/data/db";
++const char* StorageGlobalParams::kDefaultDbPath = "/var/lib/mongodb";
+ const char* StorageGlobalParams::kDefaultConfigDbPath = "/data/configdb";
+ #endif
+ 
+-- 
+2.1.0
+

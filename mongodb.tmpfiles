@@ -1,0 +1,3 @@
+z /etc/mongodb 0750 root mongod - -
+d /var/lib/mongodb - mongod mongod - -
+d /run/mongodb - mongod mongod  - -

@@ -1,0 +1,39 @@
+From 8e2941de3f3afbdeaecf4d15fa50cc9f8316fd2f Mon Sep 17 00:00:00 2001
+From: "Simental Magana, Marcos" <marcos.simental.magana@intel.com>
+Date: Fri, 26 Jun 2015 17:07:46 -0500
+Subject: [PATCH] point to %{_bindir}
+
+---
+ buildscripts/smoke.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/buildscripts/smoke.py b/buildscripts/smoke.py
+index 619130f..307028b 100755
+--- a/buildscripts/smoke.py
++++ b/buildscripts/smoke.py
+@@ -1024,7 +1024,7 @@ def expand_suites(suites,expandUseDB=True):
+                 program = 'mongos.exe'
+             else:
+                 program = 'mongos'
+-            tests += [(os.path.join(mongo_repo, program), False)]
++            tests += [(os.path.join('%{_bindir}', program), False)]
+         elif os.path.exists( suite ):
+             usedb = True
+             for name in suiteGlobalConfig:
+@@ -1263,11 +1263,11 @@ def main():
+     parser.add_option('--test-path', dest='test_path', default=None,
+                       help="Path to the test executables to run, "
+                       "currently only used for 'client' (%default)")
+-    parser.add_option('--mongod', dest='mongod_executable', default=os.path.join(mongo_repo, 'mongod'),
++    parser.add_option('--mongod', dest='mongod_executable', default=os.path.join('%{_bindir}', 'mongod'),
+                       help='Path to mongod to run (%default)')
+     parser.add_option('--port', dest='mongod_port', default="27999",
+                       help='Port the mongod will bind to (%default)')
+-    parser.add_option('--mongo', dest='shell_executable', default=os.path.join(mongo_repo, 'mongo'),
++    parser.add_option('--mongo', dest='shell_executable', default=os.path.join('%{_bindir}', 'mongo'),
+                       help='Path to mongo, for .js test files (%default)')
+     parser.add_option('--continue-on-failure', dest='continue_on_failure',
+                       action="store_true", default=False,
+-- 
+2.1.0
+

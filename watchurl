@@ -1,0 +1,2 @@
+# mongodb stable releases are 3.X.* where (X % 2 == 0)
+watchurl=https://github.com/mongodb/mongo/archive/r(3.[02468].[\d.]*).tar.gz*

@@ -1,0 +1,27 @@
+From a56188916cea508e00853d12de5658038f19e5d6 Mon Sep 17 00:00:00 2001
+From: Alberto Murillo <alberto.murillo.silva@intel.com>
+Date: Tue, 25 Aug 2015 10:35:38 -0500
+Subject: [PATCH] ignore config enoent
+
+---
+ src/mongo/util/options_parser/options_parser.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/mongo/util/options_parser/options_parser.cpp b/src/mongo/util/options_parser/options_parser.cpp
+index 6a75011..5faf802 100644
+--- a/src/mongo/util/options_parser/options_parser.cpp
++++ b/src/mongo/util/options_parser/options_parser.cpp
+@@ -830,6 +830,10 @@ Status OptionsParser::readConfigFile(const std::string& filename, std::string* c
+     FILE* config;
+     config = fopen(filename.c_str(), "r");
+     if (config == NULL) {
++        if (errno == ENOENT) {
++            *contents = std::string("");
++            return Status::OK();
++        }
+         const int current_errno = errno;
+         StringBuilder sb;
+         sb << "Error reading config file: " << strerror(current_errno);
+-- 
+2.1.0
+
