@@ -4,7 +4,7 @@
 #
 Name     : mongodb
 Version  : 3.1.7
-Release  : 12
+Release  : 13
 URL      : https://github.com/mongodb/mongo/archive/r3.1.7.tar.gz
 Source0  : https://github.com/mongodb/mongo/archive/r3.1.7.tar.gz
 Source1  : mongodb.service
