@@ -1,4 +1,4 @@
-From 8e2941de3f3afbdeaecf4d15fa50cc9f8316fd2f Mon Sep 17 00:00:00 2001
+From 76ed29d0c392a825ad5744830edbcfece0b7a7bc Mon Sep 17 00:00:00 2001
 From: "Simental Magana, Marcos" <marcos.simental.magana@intel.com>
 Date: Fri, 26 Jun 2015 17:07:46 -0500
 Subject: [PATCH] point to %{_bindir}
@@ -8,10 +8,10 @@ Subject: [PATCH] point to %{_bindir}
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/buildscripts/smoke.py b/buildscripts/smoke.py
-index 619130f..307028b 100755
+index 93fa2b3..a9b8bb3 100755
 --- a/buildscripts/smoke.py
 +++ b/buildscripts/smoke.py
-@@ -1024,7 +1024,7 @@ def expand_suites(suites,expandUseDB=True):
+@@ -1023,7 +1023,7 @@ def expand_suites(suites,expandUseDB=True):
                  program = 'mongos.exe'
              else:
                  program = 'mongos'
@@ -20,7 +20,7 @@ index 619130f..307028b 100755
          elif os.path.exists( suite ):
              usedb = True
              for name in suiteGlobalConfig:
-@@ -1263,11 +1263,11 @@ def main():
+@@ -1238,11 +1238,11 @@ def main():
      parser.add_option('--test-path', dest='test_path', default=None,
                        help="Path to the test executables to run, "
                        "currently only used for 'client' (%default)")
@@ -35,5 +35,5 @@ index 619130f..307028b 100755
      parser.add_option('--continue-on-failure', dest='continue_on_failure',
                        action="store_true", default=False,
 -- 
-2.1.0
+2.5.0
 

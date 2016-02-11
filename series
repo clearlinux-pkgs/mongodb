@@ -1,4 +1,5 @@
 0001-point-to-_bindir.patch
-ignore-config-enoent.patch
-0001-Change-default-dbpath.patch
-0002-Set-default-bind-ip-to-127.0.0.1.patch
+0002-ignore-config-enoent.patch
+0003-Change-default-dbpath.patch
+0004-Set-default-bind-ip-to-127.0.0.1.patch
+0005-version.json.patch

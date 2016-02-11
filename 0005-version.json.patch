@@ -1,0 +1,24 @@
+From b91caecb992aa9e368269dce6c6dba4e27158cf4 Mon Sep 17 00:00:00 2001
+From: Alberto Murillo <alberto.murillo.silva@intel.com>
+Date: Wed, 10 Feb 2016 17:44:00 -0600
+Subject: [PATCH] version.json
+
+---
+ version.json | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 version.json
+
+diff --git a/version.json b/version.json
+new file mode 100644
+index 0000000..426d89c
+--- /dev/null
++++ b/version.json
+@@ -0,0 +1,4 @@
++{
++    "githash": "a14d55980c2cdc565d4704a7e3ad37e4e535c1b2",
++    "version": "3.2.1"
++}
+\ No newline at end of file
+-- 
+2.5.0
+

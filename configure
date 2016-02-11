@@ -2,8 +2,11 @@ all
 --disable-warnings-as-errors
 --prefix=%{buildroot}%{_prefix}
 --ssl
---js-engine=mozjs
+--use-system-tcmalloc
+--use-system-boost
 --use-system-pcre
 --use-system-snappy
 --use-system-zlib
 --use-system-yaml
+--use-system-valgrind
+--use-system-wiredtiger

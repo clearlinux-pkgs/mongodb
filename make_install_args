@@ -1,1 +1,1 @@
-%{?_smp_mflags} --disable-warnings-as-errors --prefix=%{buildroot}%{_prefix} --ssl --js-engine=mozjs --use-system-pcre --use-system-snappy --use-system-zlib --use-system-yaml 
+%{?_smp_mflags} --disable-warnings-as-errors --prefix=%{buildroot}%{_prefix} --ssl --use-system-tcmalloc --use-system-boost --use-system-pcre --use-system-snappy --use-system-zlib --use-system-yaml --use-system-valgrind --use-system-wiredtiger

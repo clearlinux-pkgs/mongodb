@@ -1,4 +1,4 @@
-From 97cd849a24f5f8bcf6372e2164673b7c3735fff1 Mon Sep 17 00:00:00 2001
+From 9b76665037c73925a0baa5ddb4b7b2be154e96c7 Mon Sep 17 00:00:00 2001
 From: Alberto Murillo <alberto.murillo.silva@intel.com>
 Date: Mon, 31 Aug 2015 18:19:10 -0500
 Subject: [PATCH] Set default bind ip to 127.0.0.1
@@ -8,10 +8,10 @@ Subject: [PATCH] Set default bind ip to 127.0.0.1
  1 file changed, 3 insertions(+), 9 deletions(-)
 
 diff --git a/src/mongo/db/server_options_helpers.cpp b/src/mongo/db/server_options_helpers.cpp
-index 0bd160a..c5a525c 100644
+index 527d481..cc41d17 100644
 --- a/src/mongo/db/server_options_helpers.cpp
 +++ b/src/mongo/db/server_options_helpers.cpp
-@@ -759,6 +759,9 @@ Status storeServerOptions(const moe::Environment& params, const std::vector<std:
+@@ -758,6 +758,9 @@ Status storeServerOptions(const moe::Environment& params, const std::vector<std:
      if (params.count("net.bindIp")) {
          serverGlobalParams.bind_ip = params["net.bindIp"].as<std::string>();
      }
@@ -21,7 +21,7 @@ index 0bd160a..c5a525c 100644
  
      if (params.count("net.ipv6") && params["net.ipv6"].as<bool>() == true) {
          enableIPv6();
-@@ -808,15 +811,6 @@ Status storeServerOptions(const moe::Environment& params, const std::vector<std:
+@@ -807,15 +810,6 @@ Status storeServerOptions(const moe::Environment& params, const std::vector<std:
          serverGlobalParams.objcheck = params["net.wireObjectCheck"].as<bool>();
      }
  
@@ -38,5 +38,5 @@ index 0bd160a..c5a525c 100644
      if (params.count("net.unixDomainSocket.pathPrefix")) {
          serverGlobalParams.socket = params["net.unixDomainSocket.pathPrefix"].as<string>();
 -- 
-2.1.0
+2.5.0
 

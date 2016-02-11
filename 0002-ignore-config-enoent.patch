@@ -1,4 +1,4 @@
-From a56188916cea508e00853d12de5658038f19e5d6 Mon Sep 17 00:00:00 2001
+From 37462abbf735b503e73f3cbb55e16640024bdc8c Mon Sep 17 00:00:00 2001
 From: Alberto Murillo <alberto.murillo.silva@intel.com>
 Date: Tue, 25 Aug 2015 10:35:38 -0500
 Subject: [PATCH] ignore config enoent
@@ -23,5 +23,5 @@ index 6a75011..5faf802 100644
          StringBuilder sb;
          sb << "Error reading config file: " << strerror(current_errno);
 -- 
-2.1.0
+2.5.0
 
