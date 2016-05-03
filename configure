@@ -3,7 +3,6 @@ all
 --prefix=%{buildroot}%{_prefix}
 --ssl
 --use-system-tcmalloc
---use-system-boost
 --use-system-pcre
 --use-system-snappy
 --use-system-zlib

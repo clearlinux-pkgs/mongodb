@@ -4,7 +4,7 @@
 #
 Name     : mongodb
 Version  : 3.2.1
-Release  : 17
+Release  : 18
 URL      : https://github.com/mongodb/mongo/archive/r3.2.1.tar.gz
 Source0  : https://github.com/mongodb/mongo/archive/r3.2.1.tar.gz
 Source1  : mongodb.service
@@ -35,6 +35,7 @@ Patch2: 0002-ignore-config-enoent.patch
 Patch3: 0003-Change-default-dbpath.patch
 Patch4: 0004-Set-default-bind-ip-to-127.0.0.1.patch
 Patch5: 0005-version.json.patch
+Patch6: build.patch
 
 %description
 MongoDB is built for scalability, performance and high availability, scaling from single server deployments to large, complex multi-site architectures. By leveraging in-memory computing, MongoDB provides high performance for both reads and writes. MongoDBâs native replication and automated failover enable enterprise-grade reliability and operational flexibility.
@@ -78,14 +79,18 @@ config components for the mongodb package.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
+export CFLAGS="$CFLAGS -std=gnu++98 "
+export FCFLAGS="$CFLAGS -std=gnu++98 "
+export FFLAGS="$CFLAGS -std=gnu++98 "
+export CXXFLAGS="$CXXFLAGS -std=gnu++98 "
 scons %{?_smp_mflags}  all \
 --disable-warnings-as-errors \
 --prefix=%{buildroot}%{_prefix} \
 --ssl \
 --use-system-tcmalloc \
---use-system-boost \
 --use-system-pcre \
 --use-system-snappy \
 --use-system-zlib \

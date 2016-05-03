@@ -3,3 +3,4 @@
 0003-Change-default-dbpath.patch
 0004-Set-default-bind-ip-to-127.0.0.1.patch
 0005-version.json.patch
+build.patch
